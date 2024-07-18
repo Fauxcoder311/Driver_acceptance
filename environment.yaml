@@ -1,0 +1,15 @@
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+    - jupyter
+    - pandas
+    - scikit-learn
+    - numpy
+    - matplotlib
+    - seaborn
+    - black
+    - haversine
+    - toml
+    - imblearn
+    - nose==1.3.7

@@ -1,0 +1,11 @@
+features = [ "event_hour", "event_weekday", "trip_distance", "acceptance_rate", "rejection_rate", "ignorance_rate", "num_orders", "driver_distance", "driver_gps_accuracy",]
+target = "is_completed"
+test_size = 0.2
+
+[random_forest]
+n_estimators = 300
+max_depth = 30
+n_jobs = -1
+random_state = 33
+bootstrap = false
+min_samples_split = 2
