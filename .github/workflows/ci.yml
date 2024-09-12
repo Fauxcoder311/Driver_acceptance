@@ -24,7 +24,7 @@ jobs:
       uses: conda-incubator/setup-miniconda@v3
       with:
         environment-file: environment.yaml
-        activate-environment: driver_acceptance_rate
+        activate-environment: work-at-gojek
 
     - name: Install Node.js
       run: conda install -c conda-forge nodejs
