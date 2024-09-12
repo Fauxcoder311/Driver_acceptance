@@ -1,26 +1,40 @@
 name: CI Pipeline
+
 on:
   push:
-    branches:[ "main" ]
-    pull_request:
-      branches:["main"]
-    workflow_dispatch:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   build:
-    runs_on: ubuntu-latest
-    # container:
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: iterative/setup-cml@v2
-      - name: Install Packages
-        run: make install
-      - name: Format
-        run: make format
-      - name: Train
-        run: make train
-      - name: Evaluation
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: make eval
-  
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+
+    - name: Set up Conda
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        environment-file: environment.yaml
+        activate-environment: driver_acceptance_rate
+
+    - name: Install Node.js
+      run: conda install -c conda-forge nodejs
+
+    - name: Install CML
+      run: npm install -g @dvcorg/cml
+
+    - name: Run the pipeline (Makefile)
+      run: make run
+
+    - name: Post metrics to GitHub as a comment
+      run: cml comment create report.md
+      env:
+        REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
