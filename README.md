@@ -1,10 +1,7 @@
-# Gojek Takehome Assignment
-As a senior data scientist at Gojek, you will often find yourself reviewing the work of junior data scientists. You will be expected to provide mentorship and guidance on best practices and pitfalls. You should adopt a similar mindset when completing this assignment.
 
-This assignment is designed to be completed in 2 hours.
 
 ## Getting Started
-You will need to set up your development environment using conda, which you can install [directly](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) or via [pyenv](https://github.com/pyenv/pyenv). Then, ensure you have [GNU Make](https://www.gnu.org/software/make/) installed before running the following command.
+Need to set up your development environment using conda, which you can install [directly](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) or via [pyenv](https://github.com/pyenv/pyenv). Then, ensure you have [GNU Make](https://www.gnu.org/software/make/) installed before running the following command.
 
 ```bash
 make setup_env
@@ -37,12 +34,3 @@ You should generate the following submission files. First, `metrics.json` contai
 }
 ```
 
-And also, `results.csv` containing your predictions of the best drivers to allocate.
-
-| order_id  | driver_id |
-|-----------|-----------|
-| 100032007 | 987454392 |
-| 100167816 | 790186080 |
-| :         | :         |
-
-Be sure to fix any tests that have failed before submitting your code.
