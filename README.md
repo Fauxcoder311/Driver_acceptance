@@ -1,6 +1,6 @@
 
 
-## Getting Started
+## Driver Acceptance Project
 Need to set up your development environment using conda, which you can install [directly](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) or via [pyenv](https://github.com/pyenv/pyenv). Then, ensure you have [GNU Make](https://www.gnu.org/software/make/) installed before running the following command.
 
 ```bash
